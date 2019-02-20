@@ -107,3 +107,14 @@ main {
     }
   }
 }
+
+.Footer {
+  display: flex;
+  justify-content: center;
+  background: #989595;
+
+  svg {
+    padding: 10px;
+    font-size: 25px;
+  }
+}
