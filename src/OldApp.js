@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import goraster from './app/goraster.png';
 
 class App extends Component {
   render() {
@@ -19,6 +20,11 @@ class App extends Component {
           >
             Learn React
           </a>
+          <h2>First React Lesson</h2>
+          <img src={goraster} className="hamster_image"></img>
+          <button onClick={() => alert("My button is working")}>
+          Click here!
+          </button>
         </header>
       </div>
     );
