@@ -127,8 +127,20 @@ function App() {
         </main>
       </div>
       <footer className="Footer">
-        <FaLinkedinIn />
-        <FaGithub />
+        <a
+          href="https://www.linkedin.com/in/evaldas-danilevi%C4%8Dius/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaLinkedinIn />
+        </a>
+        <a
+          href="https://github.com/EDanilevicius"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaGithub />
+        </a>
       </footer>
     </React.Fragment>
   );

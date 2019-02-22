@@ -116,5 +116,12 @@ main {
   svg {
     padding: 10px;
     font-size: 25px;
+    text-decoration: none;
+    color: #000000;
+    transition: color 0.3s linear;
+
+    &:hover {
+      color: #00ffff;
+    }
   }
 }
