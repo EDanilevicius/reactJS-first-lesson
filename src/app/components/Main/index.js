@@ -1,92 +1,78 @@
 import React from "react";
 import "./index.scss";
+import data from "./data";
 
 function Main() {
   return (
     <main>
       <section className="Section">
         <div className="Section--left">
-          <h3>Education</h3>
+          <h3>{data.education.label}</h3>
         </div>
         <div className="Section--right">
-          <h3>Withering Madness University - Planet Vhoorl</h3>
+          <h3>{data.education.school}</h3>
           <p>
-            <span>Major:</span> Public relations
+            <span>{data.education.major.label}</span>{" "}
+            {data.education.major.value}
           </p>
           <p>
-            <span>Minor:</span> Scale Tending
+            <span>{data.education.minor.label}</span>{" "}
+            {data.education.minor.value}
           </p>
         </div>
       </section>
 
       <section className="Section">
         <div className="Section--left">
-          <h3>Skills</h3>
+          <h3>{data.skills.label}</h3>
         </div>
         <div className="Section--right">
-          <div>
-            <h3>Office skills</h3>
-            <p>
-              Office and records management, database administration, event
-              organization, customer support, travel coordination.
-            </p>
-          </div>
-          <div>
-            <h3>Computer skills</h3>
-            <p>
-              Microsoft productivity software (Word, Excel, etc.) Adobe Creative
-              Suite, Windows
-            </p>
-          </div>
+          {data.skills.list.map(({ title, description }, index) => (
+            <div key={index}>
+              <h3>{title}</h3>
+              <p>{description}</p>
+            </div>
+          ))}
         </div>
       </section>
 
       <section className="Section">
         <div className="Section--left">
-          <h3>Experience</h3>
+          <h3>{data.experience.label}</h3>
         </div>
         <div className="Section--right">
-          <div>
-            <div className="Section--right-job-title">
-              <h3>Doomsday Cult </h3>
-              <span>Very Good Student, 2018.10.11 - present </span>
-            </div>
-            <ul>
-              <li>
-                Inspired and won highest peasant death competition among
-                servants
-              </li>
-              <li>Helped coordinate managers to grow cult following</li>
-              <li>Provided untimely deaths to all who opposed</li>
-            </ul>
-          </div>
-          <div>
-            <div className="Section--right-job-title">
-              <h3>The Watering Hole </h3>
-              <span>Very Good Student, 2015.10.11 - 2016.05.11 </span>
-            </div>
-            <ul>
-              <li>Worked on grass-roots promotional campaigns</li>
-              <li>Reduced theft and property damage percentages</li>
-              <li>Janitor work, Laundry</li>
-            </ul>
-          </div>
+          {data.experience.list.map(
+            ({ title, subtitle, responsibilities }, index) => (
+              <div key={index}>
+                <div className="Section--right-job-title">
+                  <h3>{title}</h3>
+                  <span>{subtitle}</span>
+                </div>
+                <ul>
+                  {responsibilities.map((value, i) => (
+                    <li key={i}>{value}</li>
+                  ))}
+                </ul>
+              </div>
+            )
+          )}
+        </div>
+      </section>
+
+      <section className="Section">
+        <div className="Section--left">
+          <h3>{data.hobbies.en.label}</h3>
+        </div>
+        <div className="Section--right">
+          <p>{data.hobbies.en.summary}</p>
         </div>
       </section>
       <section className="Section">
         <div className="Section--left">
-          <h3>Hobbies</h3>
+          <h3>{data.references.en.label}</h3>
         </div>
         <div className="Section--right">
-          <p>World Domination, Deep Sea Diving, Murder Most Foul</p>
-        </div>
-      </section>
-      <section className="Section">
-        <div className="Section--left">
-          <h3>References</h3>
-        </div>
-        <div className="Section--right">
-          <p>Available on request</p>
+          <p>{data.references.en.summary}</p>
         </div>
       </section>
     </main>

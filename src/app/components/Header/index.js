@@ -1,36 +1,30 @@
 import React from "react";
 import "./index.scss";
+import data from "./data";
 
 function Header() {
   return (
     <header className="Header">
-      <h1>Evaldas Danilevicius</h1>
+      <h1>{data.name}</h1>
       <hr />
-      <p className="Header--contact">Phone: 866272991</p>
       <p className="Header--contact">
-        Email:{" "}
+        {`${data.contacts.phone.label} ${data.contacts.phone.value}`}
+      </p>
+      <p className="Header--contact">
+        {`${data.contacts.email.label} `}
         <a
           href="mailto:evaldas@pons.lt"
           target="blank"
           rel="noopener noreferrer"
         >
-          evaldas@pons.lt
+          {data.contacts.email.value}
         </a>
       </p>
-      <p className="Header--summary">
-        Bacon ipsum dolor amet turkey ham porchetta alcatra boudin, prosciutto
-        doner beef ribs. Pork chop fatback ground round, corned beef drumstick
-        brisket tri-tip bresaola ham biltong short ribs jowl kielbasa pork loin
-        chicken. Strip steak kielbasa t-bone burgdoggen fatback swine spare ribs
-        meatball landjaeger pork belly tri-tip short loin. Chuck turducken
-        chicken tenderloin bresaola ribeye, pork chop burgdoggen hamburger
-        landjaeger pastrami sirloin flank ground round buffalo. Cow turducken
-        meatloaf capicola pork tongue ham hock bresaola tail pig chuck.
-      </p>
+      <p className="Header--summary">{data.summary}</p>
       <img
         className="Header--profile-image"
-        alt="Evaldas"
-        src="https://media.licdn.com/dms/image/C5603AQGtAC1y0a_T5w/profile-displayphoto-shrink_200_200/0?e=1556150400&v=beta&t=WCiR1rNb0NJM17MMR1gpFgclEe851JdDOGZC6QbSmpg"
+        alt={data.picture.alt}
+        src={data.picture.src}
       />
     </header>
   );
