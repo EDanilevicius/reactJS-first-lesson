@@ -7,21 +7,29 @@ import { Header, Main, Footer } from "./components/index";
 
 import "./index.scss";
 
-function App() {
-  return (
-    <React.Fragment>
-      <div className="App">
-        <Header />
-        <Main />
-        <select className="App--language-select">
-          <option>English</option>
-          <option>French</option>
-          <option>German</option>
-        </select>
-      </div>
-      <Footer />
-    </React.Fragment>
-  );
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      language: "en",
+    };
+  }
+
+  render() {
+    const { language } = this.state;
+    return (
+      <React.Fragment>
+        <div className="App">
+          <Header
+            onLanguage={lang => this.setState({ language: lang })}
+            language={language}
+          />
+          <Main language={language} />
+        </div>
+        <Footer />
+      </React.Fragment>
+    );
+  }
 }
 
 export default App;
