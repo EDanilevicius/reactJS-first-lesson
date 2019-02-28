@@ -4,6 +4,8 @@ import PropTypes from "prop-types";
 function IconLink(props) {
   const { href, target, component: Component } = props;
 
+  throw Error("Footer failed!");
+
   return (
     <a href={href} target={target} rel="noopener noreferrer">
       <Component />
