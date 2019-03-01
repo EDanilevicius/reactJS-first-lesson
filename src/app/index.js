@@ -17,6 +17,10 @@ class App extends React.Component {
     };
   }
 
+  toggleHeader = () => {
+    this.setState(state => ({ showHeader: !state.showHeader }));
+  };
+
   componentDidCatch(error, info) {
     this.setState({ error: true });
     console.log("ERROR", error);
@@ -39,12 +43,7 @@ class App extends React.Component {
         }
       >
         <div className="App">
-          <button
-            type="button"
-            onClick={() =>
-              this.setState(state => ({ showHeader: !state.showHeader }))
-            }
-          >
+          <button type="button" onClick={this.toggleHeader}>
             <span id="emoji-button" role="img" aria-Label="hide header">
               ‍{showHeader ? "🏴☠" : "👁‍"}
             </span>
